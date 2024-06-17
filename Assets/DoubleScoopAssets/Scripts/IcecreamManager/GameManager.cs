@@ -16,7 +16,7 @@ public enum ICECREAM
     PISTACHIO,
     RASPBERRY_SWIRL,
     PIZZA,
-    FLAVOR7, // NOTE: TBA undecided flavor
+    NEBULA,
     ORANGE_PAINT,
     DEPLETED_URANIUM
 }

@@ -25,16 +25,21 @@ public enum ICECREAM
 
 public class GameManager : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public OrderCreation orderCreationScript; // Holds the order number we will use to cross reference with the cone.
+    private bool orderCompleted = false; // TODO: Should be toggled to true when handing over cone to snowman.
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (orderCompleted){
+            // Create New Order
+            orderCreationScript.orderNumber = orderCreationScript.CreateOrderNumber();
+
+            // TODO: Delete previous order ticket printed from machine.
+
+            // TODO: Create new order ticket at machine.
+
+            orderCompleted = false;
+        }
     }
 }

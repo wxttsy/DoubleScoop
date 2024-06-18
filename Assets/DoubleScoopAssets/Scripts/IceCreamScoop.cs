@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IceCreamScoop : MonoBehaviour
 {
-    public enum Flavour
+    /*public enum Flavour
     {
         VelocityVanilla = 1,
         FudgeFusion = 2,
@@ -17,7 +17,10 @@ public class IceCreamScoop : MonoBehaviour
         DepletedUranium = 9
     };
 
-    public Flavour flavour;
+    public Flavour flavour;*/
+
+    public ICECREAM flavour; // Note for mike: you can use the global enum defined in GameManager.cs rather than needing to set up another enum.
+
 
     // Start is called before the first frame update
     void Start()

@@ -31,8 +31,11 @@ public enum TOPPING
 
 public class GameManager : MonoBehaviour
 {
+    public Transform snowmanPosition1;
+    public Transform snowmanPosition2;
+    public Transform snowmanReset;
     [HideInInspector] private OrderCreation orderCreationScript; // Holds the order number we will use to cross reference with the cone.
-    [SerializeField] private bool orderCompleted = false; // TODO: Should be toggled to true when handing over cone to snowman.
+    [HideInInspector] public bool orderCompleted = false; // TODO: Should be toggled to true when handing over cone to snowman.
     public bool orderIsMatched = false;
 
     private void Start()
@@ -47,11 +50,21 @@ public class GameManager : MonoBehaviour
             // Create New Order
             orderCreationScript.orderNumber = orderCreationScript.CreateTicketNumber();
 
+            if (orderIsMatched) // We completed the order correctly - Great!
+            {
+                Debug.Log("We gave the snowman the order he wanted!");
+            }
+            else // We did not complete the order correctly - Oops!
+            {
+                Debug.Log("Oops, we got the snowmans order wrong.");
+            }
+            //TODO: Move the snowman away - move the next snowman up the queue
+
             // TODO: Delete previous order ticket printed from (machine/screen/etc).
 
             // TODO: Display order ticket at (machine/screen/etc).
 
-            orderCompleted = false;
+            orderCompleted = false; //Reset
         }
     }
 }

@@ -18,7 +18,7 @@ public class OrderCreation : MonoBehaviour
         orderNumber = CreateTicketNumber();
     }
 
-    public int CreateTicketNumber() // Returns a 1-3 digit int which is used as the snowman's order number.
+    public int CreateTicketNumber() // Returns a 1-3 digit int which is used as the snowman's order number. (Also creates the topping number.)
     {
         int order = 0;
         float currentScoop = 0f;

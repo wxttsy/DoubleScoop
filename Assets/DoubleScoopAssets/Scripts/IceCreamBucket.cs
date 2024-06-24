@@ -4,5 +4,21 @@ using UnityEngine;
 
 public class IceCreamBucket : MonoBehaviour
 {
-    public IceCreamScoop scoopToSpawn;
+    public GameObject scoopToSpawn;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision");
+        if(other.gameObject.CompareTag("Scooper"))
+        {
+            Debug.Log("Scooper Detected");
+            if(other.GetComponentInChildren<IceCreamScooper>().inHand == true)
+            {
+                Debug.Log("Preparing To Scoop");
+                other.GetComponentInChildren<IceCreamScooper>().ScoopIceCream(scoopToSpawn);
+            }
+        }
+    }
+
+    
 }

@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 558886683}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -1020,10 +1020,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102670538}
+        m_TargetAssemblyTypeName: IceCreamScooper, Assembly-CSharp
+        m_MethodName: OnSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102670538}
+        m_TargetAssemblyTypeName: IceCreamScooper, Assembly-CSharp
+        m_MethodName: OnRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1072,7 +1096,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1390019095}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
@@ -1137,7 +1161,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &102670536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
@@ -1168,6 +1192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c904c709590db824886263de9d26fee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoopLocation: {fileID: 183403429}
+  inHand: 0
+  canScoop: 0
 --- !u!1 &183403428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1339,8 @@ GameObject:
   - component: {fileID: 262803954}
   - component: {fileID: 262803953}
   - component: {fileID: 262803952}
+  - component: {fileID: 262803955}
+  - component: {fileID: 262803956}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -1397,6 +1426,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262803950}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &262803955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262803950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 1295522718997022315, guid: 8e7ee84c09892084fbc8c9c1511fad4a, type: 3}
+--- !u!65 &262803956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262803950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &318985733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2038,6 +2093,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
       propertyPath: m_Name
       value: ScoopTool_2_GB
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
+      propertyPath: m_TagString
+      value: Scooper
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7511558181221131132, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
@@ -3691,6 +3750,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.177}
+--- !u!1 &1390019094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1390019095}
+  m_Layer: 0
+  m_Name: AttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390019095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390019094}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.00040000034, y: 0.00029999227, z: -0.01969999}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 102670536}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1001 &1436610891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5683,6 +5773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d228ba0f3e21674fb6cff645e970403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuUI: {fileID: 0}
   scooper: {fileID: 102670531}
 --- !u!1001 &1984551722
 PrefabInstance:

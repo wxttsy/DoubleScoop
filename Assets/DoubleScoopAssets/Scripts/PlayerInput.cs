@@ -20,7 +20,7 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         input.Enable();
-        input.XRIRightHand.Scoop.performed += Scoop;
+        //input.XRIRightHand.Scoop.performed += Scoop;
         input.XRILeftHand.Menu.performed += Menu;
     }
 
@@ -44,8 +44,11 @@ public class PlayerInput : MonoBehaviour
         
     }
 
-    public void Scoop(InputAction.CallbackContext context)
-    {
-        scooper.GetComponentInChildren<IceCreamScooper>().ScoopIceCream();
-    }
+    //public void Scoop(InputAction.CallbackContext context)
+    //{
+    //    if(scooper.GetComponentInChildren<IceCreamScooper>().canScoop)
+    //    {
+    //        scooper.GetComponentInChildren<IceCreamScooper>().ScoopIceCream();
+    //    }
+    //}
 }

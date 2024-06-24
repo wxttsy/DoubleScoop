@@ -140,6 +140,7 @@ public class AudioManager : MonoBehaviour
     {
         SoundMaster s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
+        Debug.Log("Sound PLAYED");
     }
 
     public void PlayTrack(string name)
@@ -155,6 +156,7 @@ public class AudioManager : MonoBehaviour
         currentTrackPlaying.volume = 1;
         t.source.volume = 1;
         t.source.Play();
+        Debug.Log("Track PLAYED");
     }
 
     public void PlayClip(string name)
@@ -169,6 +171,7 @@ public class AudioManager : MonoBehaviour
 
         currentClipPlaying.volume = 1;
         c.source.Play();
+        Debug.Log("Clip PLAYED");
     }
 
 

@@ -78,6 +78,16 @@ public class ConeTracking : MonoBehaviour
 
                 coneServed = true;
             }
+            if (other.CompareTag("Scoop"))
+            {
+                //TODO: reparent to the cone
+
+                //Disable collisions on the scoop
+
+                // get the ice cream flavor from the scoop script and add
+                ICECREAM scoop = ICECREAM.VELOCITY_VANILLA;
+                AddIcecreamFlavor(scoop);
+            }
         }
     }
 }

@@ -73,8 +73,8 @@ public class ConeTracking : MonoBehaviour
 
                 //Set up snowman
                 Snowman snowmanScript = other.GetComponent<Snowman>();
-                snowmanScript.targetPos = snowmanScript.snowmanPosition2.position;
                 snowmanScript.cone = this.gameObject;
+                snowmanScript.SetNewDestination(snowmanScript.snowmanPosition2.position);
 
                 coneServed = true;
             }

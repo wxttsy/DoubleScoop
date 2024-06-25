@@ -13,9 +13,6 @@ public class ConeTracking : MonoBehaviour
 
     private void Start()
     {
-        AddIcecreamFlavor(ICECREAM.ANTIFREEZE_BLUE);
-        AddIcecreamFlavor(ICECREAM.VELOCITY_VANILLA);
-        AddIcecreamFlavor(ICECREAM.VELOCITY_VANILLA);
         AddToppingFlavor(TOPPING.TOPPING3);
     }
 
@@ -25,8 +22,6 @@ public class ConeTracking : MonoBehaviour
         float rate = 10f;
         coneTrackingNumber += (int)flavor * (int)Mathf.Pow(rate, currentScoops);
         currentScoops++;
-
-        //TODO: Parent the scoop to the cone visually.
     }
 
     public void AddToppingFlavor(TOPPING topping) // Call this when adding a topping to the cone.
@@ -73,19 +68,23 @@ public class ConeTracking : MonoBehaviour
 
                 //Set up snowman
                 Snowman snowmanScript = other.GetComponent<Snowman>();
-                snowmanScript.targetPos = snowmanScript.snowmanPosition2.position;
                 snowmanScript.cone = this.gameObject;
+                snowmanScript.SetNewDestination(snowmanScript.snowmanPosition2.position);
 
                 coneServed = true;
             }
             if (other.CompareTag("Scoop"))
             {
                 //TODO: reparent to the cone
-
+                other.transform.SetParent(transform, true);
+                other.transform.position = transform.position + new Vector3(0f, 0.1f + 0.05f *currentScoops, 0f);
+                other.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
                 //Disable collisions on the scoop
-
+                Destroy(other.GetComponent<Rigidbody>());
+                Destroy(other.GetComponent<BoxCollider>());
                 // get the ice cream flavor from the scoop script and add
-                ICECREAM scoop = ICECREAM.VELOCITY_VANILLA;
+                IceCreamScoop scoopScript = other.GetComponent<IceCreamScoop>(); 
+                ICECREAM scoop = scoopScript.flavour;
                 AddIcecreamFlavor(scoop);
             }
         }

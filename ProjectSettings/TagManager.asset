@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Snowman
   - Cone
+  - Scoop
+  - Scooper
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Scooper
+  - Ice Cream
   - 
   - 
   - 

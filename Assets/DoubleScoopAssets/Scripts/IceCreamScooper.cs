@@ -37,6 +37,13 @@ public class IceCreamScooper : MonoBehaviour
 
     public void OnRelease()
     {
+        if(hasScoop)
+        {
+            GameObject scoop = GetComponentInChildren<IceCreamScoop>().gameObject;
+            scoop.transform.parent = null;
+            scoop.GetComponent<Rigidbody>().isKinematic = false;
+            hasScoop = false;
+        }
         inHand = false;
     }
 

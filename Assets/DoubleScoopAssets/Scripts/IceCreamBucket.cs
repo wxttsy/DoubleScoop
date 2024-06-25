@@ -12,7 +12,7 @@ public class IceCreamBucket : MonoBehaviour
         if(other.gameObject.CompareTag("Scooper"))
         {
             Debug.Log("Scooper Detected");
-            if(other.GetComponentInChildren<IceCreamScooper>().inHand == true)
+            if(other.GetComponentInChildren<IceCreamScooper>().inHand == true && other.GetComponentInChildren<IceCreamScooper>().hasScoop == false)
             {
                 Debug.Log("Preparing To Scoop");
                 other.GetComponentInChildren<IceCreamScooper>().ScoopIceCream(scoopToSpawn);

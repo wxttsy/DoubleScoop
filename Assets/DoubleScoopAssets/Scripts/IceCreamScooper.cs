@@ -10,7 +10,7 @@ public class IceCreamScooper : MonoBehaviour
     Transform ScoopLocation;
 
     public bool inHand;
-    public bool canScoop;
+    public bool hasScoop;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,8 @@ public class IceCreamScooper : MonoBehaviour
     public void ScoopIceCream(GameObject iceCreamScoop )
     {
         Debug.Log("Scooping");
-        Instantiate(iceCreamScoop, new Vector3(ScoopLocation.position.x, ScoopLocation.position.y, ScoopLocation.position.z), Quaternion.identity);
+        Instantiate(iceCreamScoop, new Vector3(ScoopLocation.position.x, ScoopLocation.position.y, ScoopLocation.position.z), Quaternion.identity, ScoopLocation.GetComponentInParent<IceCreamScooper>().gameObject.transform);
+        hasScoop = true;
     }
     // Update is called once per frame
     void Update()
@@ -37,5 +38,16 @@ public class IceCreamScooper : MonoBehaviour
     public void OnRelease()
     {
         inHand = false;
+    }
+
+    public void Activate()
+    {
+        if(hasScoop && inHand)
+        {
+            GameObject scoop = GetComponentInChildren<IceCreamScoop>().gameObject;
+            scoop.transform.parent = null;
+            scoop.GetComponent<Rigidbody>().isKinematic = false;
+            hasScoop = false;
+        }
     }
 }

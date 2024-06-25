@@ -20,7 +20,7 @@ public class OrderCreation : MonoBehaviour
 
     public int CreateOrderNumber() // Returns a 1-3 digit int which is used as the snowman's order number.
     {
-        //Debug.Log("==============================================NEW ICECREAM ORDER");
+        Debug.Log("==============================================NEW ICECREAM ORDER");
         int order = 0;
         float currentScoop = 0f;
         float rate = 10f;
@@ -35,14 +35,14 @@ public class OrderCreation : MonoBehaviour
             else { thisScoop = Random.Range(0, 9); }
             if (thisScoop == 0)
             {
-                //Debug.Log("Exit rolled 0");
+                Debug.Log("Exit rolled 0");
                 break;
             }
-            //Debug.Log(thisScoop + "This SCOOP = " + currentScoop); //Print the scoop number in debug log.
+            Debug.Log(thisScoop + "This SCOOP = " + currentScoop); //Print the scoop number in debug log.
             order += thisScoop * (int)Mathf.Pow(rate, currentScoop);
             currentScoop++;
         }
-        //Debug.Log("RETURNED ORDER NUMBER============================================" + order);
+        Debug.Log("RETURNED ORDER NUMBER============================================" + order);
         CreateToppingForCone();
         return order;
     }
@@ -50,6 +50,6 @@ public class OrderCreation : MonoBehaviour
     public void CreateToppingForCone()
     {
         toppingNumber = Random.Range(0, 4);
-        //Debug.Log(toppingNumber);
+        Debug.Log(toppingNumber);
     }
 }

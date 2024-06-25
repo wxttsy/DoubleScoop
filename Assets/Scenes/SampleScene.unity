@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 6862755}
   - component: {fileID: 6862754}
   - component: {fileID: 6862753}
+  - component: {fileID: 6862757}
+  - component: {fileID: 6862756}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -220,6 +222,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6862751}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6862756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6862751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6862757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6862751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1 &52639201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1090,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102670538}
+        m_TargetAssemblyTypeName: IceCreamScooper, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -1194,7 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoopLocation: {fileID: 183403429}
   inHand: 0
-  canScoop: 0
+  hasScoop: 0
 --- !u!1 &183403428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1247,7 @@ GameObject:
   - component: {fileID: 183403432}
   - component: {fileID: 183403431}
   - component: {fileID: 183403430}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScoopLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1542,6 +1582,8 @@ GameObject:
   - component: {fileID: 335918051}
   - component: {fileID: 335918050}
   - component: {fileID: 335918049}
+  - component: {fileID: 335918053}
+  - component: {fileID: 335918052}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -1627,6 +1669,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335918047}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &335918052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335918047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &335918053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335918047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1001 &358843000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1950,7 +2018,7 @@ GameObject:
   - component: {fileID: 419519460}
   - component: {fileID: 419519461}
   - component: {fileID: 419519462}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,6 +2161,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
       propertyPath: m_Name
       value: ScoopTool_2_GB
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5e96e5342ea01d445b3ec0b307b159cc, type: 3}
       propertyPath: m_TagString
@@ -2316,6 +2388,8 @@ GameObject:
   - component: {fileID: 606232227}
   - component: {fileID: 606232226}
   - component: {fileID: 606232225}
+  - component: {fileID: 606232229}
+  - component: {fileID: 606232228}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -2401,6 +2475,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606232223}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &606232228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606232223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &606232229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606232223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1 &629597486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2610,8 @@ GameObject:
   - component: {fileID: 635612862}
   - component: {fileID: 635612861}
   - component: {fileID: 635612860}
+  - component: {fileID: 635612864}
+  - component: {fileID: 635612863}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -2595,6 +2697,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635612858}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &635612863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635612858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &635612864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635612858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,6 +2911,8 @@ GameObject:
   - component: {fileID: 914937775}
   - component: {fileID: 914937774}
   - component: {fileID: 914937773}
+  - component: {fileID: 914937777}
+  - component: {fileID: 914937776}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -2868,6 +2998,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914937771}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &914937776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914937771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &914937777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914937771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1 &916415223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,6 +3036,8 @@ GameObject:
   - component: {fileID: 916415227}
   - component: {fileID: 916415226}
   - component: {fileID: 916415225}
+  - component: {fileID: 916415229}
+  - component: {fileID: 916415228}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -2965,6 +3123,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916415223}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &916415228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916415223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &916415229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916415223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1 &922314485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,6 +3808,8 @@ GameObject:
   - component: {fileID: 1294855195}
   - component: {fileID: 1294855194}
   - component: {fileID: 1294855193}
+  - component: {fileID: 1294855197}
+  - component: {fileID: 1294855196}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -3709,6 +3895,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294855191}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1294855196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294855191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1294855197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294855191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1 &1316127572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390019095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4883,6 +5095,8 @@ GameObject:
   - component: {fileID: 1763056888}
   - component: {fileID: 1763056887}
   - component: {fileID: 1763056886}
+  - component: {fileID: 1763056890}
+  - component: {fileID: 1763056889}
   m_Layer: 0
   m_Name: IceCream
   m_TagString: Untagged
@@ -4968,6 +5182,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763056884}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1763056889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763056884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1763056890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763056884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoopToSpawn: {fileID: 0}
 --- !u!1001 &1788442866
 PrefabInstance:
   m_ObjectHideFlags: 0

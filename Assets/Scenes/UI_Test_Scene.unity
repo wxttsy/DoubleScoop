@@ -2150,10 +2150,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 51354347}
   m_HandleRect: {fileID: 1495708843}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2165,7 +2165,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: -6
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2821,7 +2821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 669928186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &669928186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,25 +2957,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1061836333}
   m_HandleRect: {fileID: 1432305022}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1941276101}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
         m_MethodName: SetMasterVolume
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: -6
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &698250306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,7 +3365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dd5de2bfdd10949a6c415f1f97fcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderCreationScript: {fileID: 879556394}
+  snowmanPosition1: {fileID: 0}
+  snowmanPosition2: {fileID: 0}
+  snowmanReset: {fileID: 0}
+  orderCompleted: 0
+  orderIsMatched: 0
 --- !u!4 &879556396
 Transform:
   m_ObjectHideFlags: 0
@@ -5314,10 +5330,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2105523319}
   m_HandleRect: {fileID: 583941034}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5329,7 +5345,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: -6
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -8254,6 +8270,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1365846587}
   soundFXSlider: {fileID: 2018781706}
   ambienceSlider: {fileID: 468886894}
+  masterVolume: 1
 --- !u!1001 &1984551722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8690,10 +8707,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 435681877}
   m_HandleRect: {fileID: 1913322901}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -8705,7 +8722,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: -6
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
@@ -13,40 +14,52 @@ public class SettingsManager : MonoBehaviour
     public Slider musicSlider;
     public Slider soundFXSlider;
     public Slider ambienceSlider;
+    public float masterVolume;
 
-    const string mixer_Master = "Master";
-    const string mixer_Music = "Music";
-    const string mixer_SoundFX = "SoundFX";
-    const string mixer_Ambience = "Ambience";
-
-
-    // Sound Sliders
-
-    private void Awake()
+    private void Start()
     {
-        masterSlider.onValueChanged.AddListener(SetMasterVolume);
-        musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        soundFXSlider.onValueChanged.AddListener(SetSoundFXVolume);
-        ambienceSlider.onValueChanged.AddListener(SetAmbienceVolume);
-
+        SetMasterVolume();
+        SetMusicVolume();
+        SetSoundFXVolume();
+        SetAmbienceVolume();
     }
 
-    public void SetMasterVolume(float value)
+
+    public void SetMasterVolume()
     {
-        audioMixer.SetFloat("mixer_Master", Mathf.Log10(value) * 20);
+        masterVolume = masterSlider.value;
+        audioMixer.SetFloat("Master", Mathf.Log10(masterVolume) * 20);
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
     }
-    public void SetMusicVolume(float value)
+
+    public void SetMusicVolume()
     {
-        audioMixer.SetFloat("mixer_Music", Mathf.Log10(value) * 20);
+        float volume = musicSlider.value;
+        audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
-    public void SetSoundFXVolume(float value)
+
+    public void SetSoundFXVolume()
     {
-        audioMixer.SetFloat("mixer_SoundFX", Mathf.Log10(value) * 20);
+        float volume = soundFXSlider.value;
+        audioMixer.SetFloat("SoundFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SoundFXVolume", volume);
     }
-    public void SetAmbienceVolume(float value)
+
+    public void SetAmbienceVolume()
     {
-        audioMixer.SetFloat("mixer_Ambience", Mathf.Log10(value) * 20);
+        float volume = ambienceSlider.value;
+        audioMixer.SetFloat("Ambience", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("AmbienceVolume", volume);
     }
+    public void LoadVolume()
+    {
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        soundFXSlider.value = PlayerPrefs.GetFloat("soundFXVolume");
+    }
+
+
+
 
 
 }

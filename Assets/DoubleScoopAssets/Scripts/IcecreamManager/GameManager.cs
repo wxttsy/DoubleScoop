@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public Transform snowmanPosition2;
     public Transform snowmanReset;
     [HideInInspector] private OrderCreation orderCreationScript; // Holds the order number we will use to cross reference with the cone.
-    [HideInInspector] public bool orderCompleted = false; // TODO: Should be toggled to true when handing over cone to snowman.
+    [HideInInspector] public bool orderCompleted = false;
     public bool orderIsMatched = false;
 
     private void Start()
@@ -58,8 +58,6 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Oops, we got the snowmans order wrong.");
             }
-            //TODO: Move the snowman away - move the next snowman up the queue
-
             // TODO: Delete previous order ticket printed from (machine/screen/etc).
 
             // TODO: Display order ticket at (machine/screen/etc).

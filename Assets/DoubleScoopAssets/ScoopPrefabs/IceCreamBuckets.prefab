@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoopToSpawn: {fileID: 0}
+  scoopToSpawn: {fileID: 2216868908371592543, guid: 3309a49605401c449a69aa6321cb769b, type: 3}
 --- !u!65 &3622113166808903721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoopToSpawn: {fileID: 0}
+  scoopToSpawn: {fileID: 4455179422039036641, guid: 55613b10918870d488cb5be12c488806, type: 3}
 --- !u!65 &3622113167021522026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06d1a52077fea224096d7f3fd5c194ec, type: 2}
+  - {fileID: 2100000, guid: a973c3317709f5a4d8bbd6fba2ed0b18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoopToSpawn: {fileID: 0}
+  scoopToSpawn: {fileID: 1295522718997022315, guid: 617584ffc0c899043a239f71650e0dfb, type: 3}
 --- !u!65 &3622113167034141809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -939,7 +939,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a973c3317709f5a4d8bbd6fba2ed0b18, type: 2}
+  - {fileID: 2100000, guid: 06d1a52077fea224096d7f3fd5c194ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ce916d971d8dd45a6d1738f90ba401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoopToSpawn: {fileID: 0}
+  scoopToSpawn: {fileID: 6698809457374391933, guid: 0161051d101e8c249bc273cb311b4bd9, type: 3}
 --- !u!65 &3622113168293203500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1148,7 +1148,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3622113168807235969}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38410866, w: 0.9232879}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38411006, w: 0.92328733}
   m_LocalPosition: {x: 0.68, y: 0.91, z: -0.967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

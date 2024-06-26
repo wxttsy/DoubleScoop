@@ -66,7 +66,7 @@ public class ConeTracking : MonoBehaviour
                 Destroy(GetComponent<Rigidbody>());
                 Destroy(GetComponent<BoxCollider>());
 
-                //Set up snowman
+                // Set up snowman
                 Snowman snowmanScript = other.GetComponent<Snowman>();
                 snowmanScript.cone = this.gameObject;
                 snowmanScript.SetNewDestination(snowmanScript.snowmanPosition2.position);
@@ -75,14 +75,14 @@ public class ConeTracking : MonoBehaviour
             }
             if (other.CompareTag("Scoop"))
             {
-                //TODO: reparent to the cone
+                // Reparent to the cone
                 other.transform.SetParent(transform, true);
                 other.transform.position = transform.position + new Vector3(0f, 0.1f + 0.05f *currentScoops, 0f);
                 other.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                //Disable collisions on the scoop
+                // Disable collisions on the scoop
                 Destroy(other.GetComponent<Rigidbody>());
                 Destroy(other.GetComponent<BoxCollider>());
-                // get the ice cream flavor from the scoop script and add
+                // Get the ice cream flavor from the scoop script and add
                 IceCreamScoop scoopScript = other.GetComponent<IceCreamScoop>(); 
                 ICECREAM scoop = scoopScript.flavour;
                 AddIcecreamFlavor(scoop);

@@ -40,7 +40,6 @@ public class OrderCreation : MonoBehaviour
             order += thisScoop * (int)Mathf.Pow(rate, currentScoop);
             currentScoop++;
         }
-        CreateToppingForCone();
         return order;
     }
 

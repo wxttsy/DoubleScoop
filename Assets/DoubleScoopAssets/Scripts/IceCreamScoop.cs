@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class IceCreamScoop : MonoBehaviour
@@ -20,7 +18,7 @@ public class IceCreamScoop : MonoBehaviour
     public Flavour flavour;*/
 
     public ICECREAM flavour; // Note for mike: you can use the global enum defined in GameManager.cs rather than needing to set up another enum.
-
+    public IceCreamScooper scooper;
 
     // Start is called before the first frame update
     void Start()

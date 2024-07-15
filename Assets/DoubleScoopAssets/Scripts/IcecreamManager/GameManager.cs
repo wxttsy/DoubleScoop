@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool orderCompleted = false;
     public bool orderIsMatched = false;
     public TextMeshProUGUI orderDisplay;
+    public TextMeshProUGUI orderCorrect;
     private void Start()
     {
         orderCreationScript = GetComponent<OrderCreation>();
@@ -55,16 +56,16 @@ public class GameManager : MonoBehaviour
 
             if (orderIsMatched) // We completed the order correctly - Great!
             {
-                Debug.Log("We gave the snowman the order he wanted!");
+                orderCorrect.text = "Last order was Correct!\nIcecream Order:";
+                
             }
             else // We did not complete the order correctly - Oops!
             {
-                Debug.Log("Oops, we got the snowmans order wrong.");
+                orderCorrect.text = "Last order was Wrong!\nIcecream Order:";
             }
             // TODO: Delete previous order ticket printed from (machine/screen/etc).
 
             // TODO: Display order ticket at (machine/screen/etc).
-
             orderCompleted = false; //Reset
         }
     }

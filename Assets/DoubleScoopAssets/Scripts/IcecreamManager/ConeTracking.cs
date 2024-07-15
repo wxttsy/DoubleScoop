@@ -10,6 +10,7 @@ public class ConeTracking : MonoBehaviour
     private bool coneServed = false;
     [SerializeField] private int currentScoops = 0;
     [SerializeField] private int maxScoopsForCone = 3;
+    public Transform scoopPos;
 
     private void Start()
     {
@@ -77,14 +78,17 @@ public class ConeTracking : MonoBehaviour
             {
                 // Reparent to the cone
                 other.transform.SetParent(transform, true);
-                other.transform.position = transform.position + new Vector3(0f, 0.1f + 0.05f *currentScoops, 0f);
+                other.transform.position = transform.position;
+                other.transform.position = scoopPos.position + new Vector3(0f, 0.05f *currentScoops, 0f);
                 other.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
                 // Disable collisions on the scoop
                 Destroy(other.GetComponent<Rigidbody>());
                 Destroy(other.GetComponent<BoxCollider>());
                 // Get the ice cream flavor from the scoop script and add
-                IceCreamScoop scoopScript = other.GetComponent<IceCreamScoop>(); 
+                IceCreamScoop scoopScript = other.GetComponent<IceCreamScoop>();
+                IceCreamScooper scooper = scoopScript.scooper;
                 ICECREAM scoop = scoopScript.flavour;
+                scooper.hasScoop = false;
                 AddIcecreamFlavor(scoop);
             }
         }

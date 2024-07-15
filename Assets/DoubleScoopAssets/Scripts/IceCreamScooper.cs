@@ -9,8 +9,12 @@ public class IceCreamScooper : MonoBehaviour
     [SerializeField]
     Transform ScoopLocation;
 
+    private GameObject scoopOfIcecream;
+
+
     public bool inHand;
     public bool hasScoop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +25,8 @@ public class IceCreamScooper : MonoBehaviour
     public void ScoopIceCream(GameObject iceCreamScoop )
     {
         Debug.Log("Scooping");
-        Instantiate(iceCreamScoop, new Vector3(ScoopLocation.position.x, ScoopLocation.position.y, ScoopLocation.position.z), Quaternion.identity, ScoopLocation.GetComponentInParent<IceCreamScooper>().gameObject.transform);
+        scoopOfIcecream = Instantiate(iceCreamScoop, new Vector3(ScoopLocation.position.x, ScoopLocation.position.y, ScoopLocation.position.z), Quaternion.identity, ScoopLocation.GetComponentInParent<IceCreamScooper>().gameObject.transform);
+        scoopOfIcecream.GetComponent<IceCreamScoop>().scooper = this;
         hasScoop = true;
     }
     // Update is called once per frame
@@ -32,28 +37,17 @@ public class IceCreamScooper : MonoBehaviour
 
     public void OnSelect()
     {
-        inHand = true;
+        //inHand = true;
     }
 
-    public void OnRelease()
+    public void DropIceCream()
     {
         if(hasScoop)
         {
-            GameObject scoop = GetComponentInChildren<IceCreamScoop>().gameObject;
-            scoop.transform.parent = null;
-            scoop.GetComponent<Rigidbody>().isKinematic = false;
-            hasScoop = false;
-        }
-        inHand = false;
-    }
-
-    public void Activate()
-    {
-        if(hasScoop && inHand)
-        {
-            GameObject scoop = GetComponentInChildren<IceCreamScoop>().gameObject;
-            scoop.transform.parent = null;
-            scoop.GetComponent<Rigidbody>().isKinematic = false;
+            scoopOfIcecream.transform.SetParent(null);
+            Rigidbody rb = scoopOfIcecream.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.useGravity = true;
             hasScoop = false;
         }
     }

@@ -30,13 +30,18 @@ public class Snowman : MonoBehaviour
         snowmanReset = gameManagerScript.snowmanReset;
         agent = GetComponent<NavMeshAgent>();
         targetPos = snowmanPosition1.transform.position;
+        SetNewDestination(snowmanPosition1.position);
+    }
+
+    public void SetNewDestination(Vector3 pos)
+    {
+        agent.SetDestination(pos);
+        targetPos = pos;
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(targetPos);
-
         // Move snowman away from kiosk
         if (targetPos == snowmanPosition2.position && agent.remainingDistance <= agent.stoppingDistance)
         {
@@ -57,6 +62,6 @@ public class Snowman : MonoBehaviour
         Destroy(cone);
         //Move snowman to new target position.
         transform.position = snowmanReset.position;
-        targetPos = snowmanPosition1.position;
+        SetNewDestination(snowmanPosition1.position);
     }
 }

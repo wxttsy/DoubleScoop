@@ -42,15 +42,16 @@ public class IceCreamScooper : MonoBehaviour
 
     public void DropIceCream()
     {
-        Debug.Log("Drop icecream");
         if(scoopOfIcecream != null)
         {
-            Debug.Log("Drop icecream check working");
+            hasScoop = false;
             scoopOfIcecream.transform.SetParent(null);
+            Destroy(scoopOfIcecream);
+            /*
             Rigidbody rb = scoopOfIcecream.GetComponent<Rigidbody>();
             rb.isKinematic = false;
-            rb.useGravity = true;
-            hasScoop = false;
+            rb.useGravity = false;*/
+            
         }
     }
 }

@@ -56,11 +56,13 @@ public class GameManager : MonoBehaviour
 
             if (orderIsMatched) // We completed the order correctly - Great!
             {
+                //audioManager.PlaySound("OrderSuccess");
                 orderCorrect.text = "Last order was Correct!\nIcecream Order:";
                 
             }
             else // We did not complete the order correctly - Oops!
             {
+                //audioManager.PlaySound("OrderFailed");
                 orderCorrect.text = "Last order was Wrong!\nIcecream Order:";
             }
             // TODO: Delete previous order ticket printed from (machine/screen/etc).

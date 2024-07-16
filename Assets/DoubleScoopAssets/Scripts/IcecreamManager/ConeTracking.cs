@@ -9,8 +9,10 @@ public class ConeTracking : MonoBehaviour
     public int toppingTrackingNumber = 0;
     private bool coneServed = false;
     [SerializeField] private int currentScoops = 0;
-    [SerializeField] private int maxScoopsForCone = 3;
-    public Transform scoopPos;
+    [SerializeField] private int maxScoopsForCone = 2;
+    public Transform scoop1Pos;
+    public Transform scoop2Pos;
+    public Transform scoop3Pos;
 
     private void Start()
     {
@@ -19,10 +21,12 @@ public class ConeTracking : MonoBehaviour
 
     public void AddIcecreamFlavor(ICECREAM flavor) // Call this when adding a Scoop of icecream to the cone.
     {
-        if (currentScoops >= maxScoopsForCone) { return; } // Do not allow the player to add more scoops if maxscoops have already been added.
-        float rate = 10f;
-        coneTrackingNumber += (int)flavor * (int)Mathf.Pow(rate, currentScoops);
-        currentScoops++;
+        if (currentScoops < maxScoopsForCone)
+        { // Do not allow the player to add more scoops if maxscoops have already been added.
+            float rate = 10f;
+            coneTrackingNumber += (int)flavor * (int)Mathf.Pow(rate, currentScoops);
+            currentScoops++;
+        }
     }
 
     public void AddToppingFlavor(TOPPING topping) // Call this when adding a topping to the cone.
@@ -44,7 +48,7 @@ public class ConeTracking : MonoBehaviour
         int toppingNumber = orderCreationScript.toppingNumber;
 
         // Return true if this cone's Tracking number + topping Tracking number match the order.
-        bool isMatch = coneTrackingNumber == orderNumber && toppingTrackingNumber == toppingNumber;
+        bool isMatch = coneTrackingNumber == orderNumber;
         gameManagerScript.orderIsMatched = isMatch;
 
         // Toggle GameManager.cs orderCompleted bool to be true so a new order can be made.
@@ -76,20 +80,34 @@ public class ConeTracking : MonoBehaviour
             }
             if (other.CompareTag("Scoop"))
             {
-                // Reparent to the cone
-                other.transform.SetParent(transform, true);
-                other.transform.position = transform.position;
-                other.transform.position = scoopPos.position + new Vector3(0f, 0.05f *currentScoops, 0f);
-                other.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                // Disable collisions on the scoop
-                Destroy(other.GetComponent<Rigidbody>());
-                Destroy(other.GetComponent<BoxCollider>());
-                // Get the ice cream flavor from the scoop script and add
-                IceCreamScoop scoopScript = other.GetComponent<IceCreamScoop>();
-                IceCreamScooper scooper = scoopScript.scooper;
-                ICECREAM scoop = scoopScript.flavour;
-                scooper.hasScoop = false;
-                AddIcecreamFlavor(scoop);
+                if (currentScoops <= 2)
+                {
+                    // Reparent to the cone
+                    other.transform.SetParent(transform, true);
+                    switch (currentScoops)
+                    {
+                        case 0:
+                            other.transform.position = scoop1Pos.position;
+                            other.transform.rotation = scoop1Pos.rotation;
+                            break;
+                        case 1:
+                            other.transform.position = scoop2Pos.position;
+                            break;
+                        case 2:
+                            other.transform.position = scoop3Pos.position;
+                            break;
+                    }
+
+                    // Disable collisions on the scoop
+                    Destroy(other.GetComponent<Rigidbody>());
+                    Destroy(other.GetComponent<BoxCollider>());
+                    // Get the ice cream flavor from the scoop script and add
+                    IceCreamScoop scoopScript = other.GetComponent<IceCreamScoop>();
+                    IceCreamScooper scooper = scoopScript.scooper;
+                    ICECREAM scoop = scoopScript.flavour;
+                    scooper.hasScoop = false;
+                    AddIcecreamFlavor(scoop);
+                }
             }
         }
     }

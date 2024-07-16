@@ -14,6 +14,9 @@ public class Snowman : MonoBehaviour
     [HideInInspector] public Transform snowmanPosition1;
     [HideInInspector] public Transform snowmanPosition2;
     [HideInInspector] public Transform snowmanReset;
+    public GameObject sunglasses;
+    public GameObject scarf;
+    public GameObject hat;
 
     private NavMeshAgent agent;
     public Vector3 targetPos;
@@ -31,6 +34,7 @@ public class Snowman : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         targetPos = snowmanPosition1.transform.position;
         SetNewDestination(snowmanPosition1.position);
+        SetAccessories();
     }
 
     public void SetNewDestination(Vector3 pos)
@@ -56,12 +60,28 @@ public class Snowman : MonoBehaviour
         }
     }
 
-    private void LineUp()
-    {
+    private void LineUp() {
         //Remove cone attached as child.
         Destroy(cone);
         //Move snowman to new target position.
         transform.position = snowmanReset.position;
         SetNewDestination(snowmanPosition1.position);
+        SetAccessories();
+    }
+
+    private void SetAccessories()
+    {
+        float showSunglasses = Random.Range(0, 2);
+        float showHat = Random.Range(0, 2);
+        float showScarf = Random.Range(0, 2);
+
+        if (showSunglasses == 0) sunglasses.SetActive(false);
+        else sunglasses.SetActive(true);
+
+        if (showHat == 0) hat.SetActive(false);
+        else hat.SetActive(true);
+
+        if (showScarf == 0) scarf.SetActive(false);
+        else scarf.SetActive(true);
     }
 }

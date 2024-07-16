@@ -1,18 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject MenuScreen;
+    [SerializeField] GameObject SettingsScreen;
+    [SerializeField] GameObject ControlsScreen;
+
+    public void Awake()
     {
-        
+        MenuScreen.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenSettingsScreen()
     {
-        
+        SettingsScreen.SetActive(true);
+        MenuScreen.SetActive(false);
+    }
+    public void CloseSettingsScreen()
+    {
+        SettingsScreen.SetActive(false);
+        MenuScreen.SetActive(true);
+    }
+
+    public void OpenControlsScreen()
+    {
+        ControlsScreen.SetActive(true);
+        MenuScreen.SetActive(false);
+    }
+    public void CloseControlsScreen()
+    {
+        ControlsScreen.SetActive(false);
+        MenuScreen.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("GameHasQuit");
     }
 }

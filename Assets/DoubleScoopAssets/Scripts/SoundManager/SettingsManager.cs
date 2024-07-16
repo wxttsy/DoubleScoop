@@ -15,6 +15,10 @@ public class SettingsManager : MonoBehaviour
     public Slider soundFXSlider;
     public Slider ambienceSlider;
     public float masterVolume;
+    public float musicVolume;
+    public float soundFXVolume;
+    public float ambienceVolume;
+
 
     private void Start()
     {
@@ -34,23 +38,23 @@ public class SettingsManager : MonoBehaviour
 
     public void SetMusicVolume()
     {
-        float volume = musicSlider.value;
-        audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        musicVolume = musicSlider.value;
+        audioMixer.SetFloat("Music", Mathf.Log10(musicVolume) * 20);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
     }
 
     public void SetSoundFXVolume()
     {
-        float volume = soundFXSlider.value;
-        audioMixer.SetFloat("SoundFX", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("SoundFXVolume", volume);
+        soundFXVolume = soundFXSlider.value;
+        audioMixer.SetFloat("SoundFX", Mathf.Log10(soundFXVolume) * 20);
+        PlayerPrefs.SetFloat("SoundFXVolume", soundFXVolume);
     }
 
     public void SetAmbienceVolume()
     {
-        float volume = ambienceSlider.value;
-        audioMixer.SetFloat("Ambience", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("AmbienceVolume", volume);
+        ambienceVolume = ambienceSlider.value;
+        audioMixer.SetFloat("Ambience", Mathf.Log10(ambienceVolume) * 20);
+        PlayerPrefs.SetFloat("AmbienceVolume", ambienceVolume);
     }
     public void LoadVolume()
     {

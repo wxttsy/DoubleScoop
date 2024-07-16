@@ -20,6 +20,8 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePauseScreen()
     {
+/*        SettingsScreen.SetActive(false);
+        ControlsScreen.SetActive(false);*/
         PauseScreen.SetActive(!PauseScreen.activeSelf);
         isPaused = !isPaused;
 

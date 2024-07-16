@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 875362790036875039, guid: f4f1700027f373e4196099811e45add0, type: 3}
       propertyPath: m_Name
-      value: ConeDispenser
+      value: ConeDispenser Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1975546430662161740, guid: f4f1700027f373e4196099811e45add0, type: 3}
       propertyPath: m_UseGravity
@@ -62,6 +62,14 @@ PrefabInstance:
     - target: {fileID: 6505063281977038356, guid: f4f1700027f373e4196099811e45add0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782288849134905225, guid: f4f1700027f373e4196099811e45add0, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782288849134905225, guid: f4f1700027f373e4196099811e45add0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0263
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5793180331801039133, guid: f4f1700027f373e4196099811e45add0, type: 3}

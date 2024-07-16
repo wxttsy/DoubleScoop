@@ -37,13 +37,15 @@ public class IceCreamScooper : MonoBehaviour
 
     public void OnSelect()
     {
-        //inHand = true;
+        DropIceCream();
     }
 
     public void DropIceCream()
     {
-        if(hasScoop)
+        Debug.Log("Drop icecream");
+        if(scoopOfIcecream != null)
         {
+            Debug.Log("Drop icecream check working");
             scoopOfIcecream.transform.SetParent(null);
             Rigidbody rb = scoopOfIcecream.GetComponent<Rigidbody>();
             rb.isKinematic = false;

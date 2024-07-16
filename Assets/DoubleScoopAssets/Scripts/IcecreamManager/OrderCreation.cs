@@ -16,6 +16,7 @@ public class OrderCreation : MonoBehaviour
     {
         // Init first order.
         orderNumber = CreateTicketNumber();
+        print(orderNumber);
     }
 
     public int CreateTicketNumber() // Returns a 1-3 digit int which is used as the snowman's order number. (Also creates the topping number.)
@@ -25,7 +26,7 @@ public class OrderCreation : MonoBehaviour
         float rate = 10f;
 
         // Create icecream order.
-        int amountOfScoops = Random.Range(1, maxScoops+1);
+        int amountOfScoops = Random.Range(1, maxScoops);
         for (int i = 0; i < amountOfScoops; i++){
             int thisScoop;
 
@@ -40,7 +41,6 @@ public class OrderCreation : MonoBehaviour
             order += thisScoop * (int)Mathf.Pow(rate, currentScoop);
             currentScoop++;
         }
-        CreateToppingForCone();
         return order;
     }
 

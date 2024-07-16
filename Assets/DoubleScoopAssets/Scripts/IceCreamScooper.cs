@@ -7,9 +7,14 @@ using UnityEngine.XR;
 public class IceCreamScooper : MonoBehaviour
 {
     [SerializeField]
-    GameObject iceCreamScoop;
-    [SerializeField]
-    GameObject ScoopLocation;
+    Transform ScoopLocation;
+
+    private GameObject scoopOfIcecream;
+
+
+    public bool inHand;
+    public bool hasScoop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +22,33 @@ public class IceCreamScooper : MonoBehaviour
         
     }
 
-    public void ScoopIceCream()
+    public void ScoopIceCream(GameObject iceCreamScoop )
     {
-        Instantiate(iceCreamScoop, ScoopLocation.transform);
+        Debug.Log("Scooping");
+        scoopOfIcecream = Instantiate(iceCreamScoop, new Vector3(ScoopLocation.position.x, ScoopLocation.position.y, ScoopLocation.position.z), Quaternion.identity, ScoopLocation.GetComponentInParent<IceCreamScooper>().gameObject.transform);
+        scoopOfIcecream.GetComponent<IceCreamScoop>().scooper = this;
+        hasScoop = true;
     }
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnSelect()
+    {
+        //inHand = true;
+    }
+
+    public void DropIceCream()
+    {
+        if(hasScoop)
+        {
+            scoopOfIcecream.transform.SetParent(null);
+            Rigidbody rb = scoopOfIcecream.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            hasScoop = false;
+        }
     }
 }

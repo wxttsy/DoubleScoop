@@ -5,10 +5,15 @@ using UnityEngine;
 public class PFRadio : MonoBehaviour
 {
 
+    public ParticleSystem musicNote;
     bool isplaying = false;
 
     private void FixedUpdate()
     {
+        if (AudioManager.instance.currentTrackPlaying.track == null)
+        {
+            musicNote.maxParticles = 0;
+        }
         if (isplaying == false)
         {
             PickSong();
@@ -45,16 +50,19 @@ public class PFRadio : MonoBehaviour
 
     void PlaySong1()
     {
+        musicNote.maxParticles = 10;
         AudioManager.instance.PlayTrack("Track_1");
     }
 
     void PlaySong2()
     {
+        musicNote.maxParticles = 10;
         AudioManager.instance.PlayTrack("Track_2");
     }
 
     void PlaySong3()
     {
+        musicNote.maxParticles = 10;
         AudioManager.instance.PlayTrack("Track_3");
     }
 }

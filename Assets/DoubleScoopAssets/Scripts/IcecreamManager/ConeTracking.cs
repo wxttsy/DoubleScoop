@@ -23,6 +23,7 @@ public class ConeTracking : MonoBehaviour
     {
         if (currentScoops < maxScoopsForCone)
         { // Do not allow the player to add more scoops if maxscoops have already been added.
+            AudioManager.instance.PlaySound("Pop");
             float rate = 10f;
             coneTrackingNumber += (int)flavor * (int)Mathf.Pow(rate, currentScoops);
             currentScoops++;

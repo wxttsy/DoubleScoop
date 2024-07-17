@@ -20,7 +20,8 @@ public class Snowman : MonoBehaviour
 
     private NavMeshAgent agent;
     public Vector3 targetPos;
-
+    private bool playBell = true;
+    private bool playSnowman = true;
     [HideInInspector] public GameObject cone = null;
     // Start is called before the first frame update
     void Start()
@@ -49,14 +50,24 @@ public class Snowman : MonoBehaviour
         // Move snowman away from kiosk
         if (targetPos == snowmanPosition2.position && agent.remainingDistance <= agent.stoppingDistance)
         {
-            AudioManager.instance.PlaySound("SnowmanMove");
+            if (playSnowman)
+            {
+                AudioManager.instance.PlaySound("SnowmanMove");
+                playSnowman = false;
+                playBell = true;
+            }
             LineUp();
         }
         // Move snowman to kiosk
         if (targetPos == snowmanPosition1.position && agent.remainingDistance <= agent.stoppingDistance)
         {
             // Look at player
-            AudioManager.instance.PlaySound("OrderCall");
+            if (playBell)
+            {
+                AudioManager.instance.PlaySound("OrderCall");
+                playBell = false;
+                playSnowman = true;
+            }
             Quaternion targetRotation = new Quaternion(0f, 180f, 0f,0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         }

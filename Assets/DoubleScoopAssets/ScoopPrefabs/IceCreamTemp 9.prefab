@@ -151,9 +151,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: fafc07e86f8e6a6478a35ca074aa36ea, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fafc07e86f8e6a6478a35ca074aa36ea, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 213cc2e1c42faf542a93f40587a90786, type: 2}
+    - target: {fileID: -7511558181221131132, guid: fafc07e86f8e6a6478a35ca074aa36ea, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 02d128b3714bb7c419a004e19e49f204, type: 2}
     - target: {fileID: 919132149155446097, guid: fafc07e86f8e6a6478a35ca074aa36ea, type: 3}
       propertyPath: m_Name
       value: IceCreamScooped

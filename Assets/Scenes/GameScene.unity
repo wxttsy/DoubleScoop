@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17462945, g: 0.21842377, b: 0.3006846, a: 1}
+  m_IndirectSpecularColor: {r: 0.1746361, g: 0.21843328, b: 0.30069357, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25362,11 +25362,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 212624037923992752, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.015
+      value: 0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 212624037923992752, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.366
       objectReference: {fileID: 0}
     - target: {fileID: 212624037923992752, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.214
+      value: 0.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 212624037923992752, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.005663118
+      objectReference: {fileID: 0}
+    - target: {fileID: 212624037923992752, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99998397
+      objectReference: {fileID: 0}
+    - target: {fileID: 212624037923992752, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180.649
       objectReference: {fileID: 0}
     - target: {fileID: 1348908022960017375, guid: fe0d2990b7686354c8606382bdb38aaf, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30684,7 +30700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796596894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.368, y: 0.331, z: -0.033}
+  m_LocalPosition: {x: 0.06, y: 0.331, z: -0.203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

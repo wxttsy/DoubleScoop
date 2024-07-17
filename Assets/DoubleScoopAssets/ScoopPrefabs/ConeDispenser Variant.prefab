@@ -19,6 +19,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3764810808746052762, guid: f4f1700027f373e4196099811e45add0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076519413336298952, guid: f4f1700027f373e4196099811e45add0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6505063281977038356, guid: f4f1700027f373e4196099811e45add0, type: 3}
       propertyPath: m_RootOrder
       value: 0

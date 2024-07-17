@@ -6322,7 +6322,7 @@ MonoBehaviour:
   - name: UI
     clip: {fileID: 8300000, guid: f665c83c1d5657f43960ae3195e969a7, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     source: {fileID: 0}
   tracks:
   - name: Track_1
@@ -6388,7 +6388,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 75267563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcdd2418ff6b81c479b6835253b95e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: d23a0c8332cca204080cbb1c50fdd6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &93181738

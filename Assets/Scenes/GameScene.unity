@@ -6354,8 +6354,8 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Collision
-    clip: {fileID: 8300000, guid: cf23082e4763607479101944cf087e7f, type: 3}
+  - name: Pop
+    clip: {fileID: 8300000, guid: 5a3918b08cb2b2e4bb08b6824717be96, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

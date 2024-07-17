@@ -109,7 +109,7 @@ public class AudioManager : MonoBehaviour
 
         if (currentTrackPlaying == null)
         {
-            PlayTrack("Silence");
+            PlayTrack("Track_Silence");
         }
 
         if (isClipFading)

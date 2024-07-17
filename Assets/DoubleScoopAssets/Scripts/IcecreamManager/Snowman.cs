@@ -49,12 +49,14 @@ public class Snowman : MonoBehaviour
         // Move snowman away from kiosk
         if (targetPos == snowmanPosition2.position && agent.remainingDistance <= agent.stoppingDistance)
         {
+            AudioManager.instance.PlaySound("SnowmanMove");
             LineUp();
         }
         // Move snowman to kiosk
         if (targetPos == snowmanPosition1.position && agent.remainingDistance <= agent.stoppingDistance)
         {
             // Look at player
+            AudioManager.instance.PlaySound("OrderCall");
             Quaternion targetRotation = new Quaternion(0f, 180f, 0f,0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         }

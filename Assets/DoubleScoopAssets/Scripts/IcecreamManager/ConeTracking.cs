@@ -75,6 +75,7 @@ public class ConeTracking : MonoBehaviour
                 Snowman snowmanScript = other.GetComponent<Snowman>();
                 snowmanScript.cone = this.gameObject;
                 snowmanScript.SetNewDestination(snowmanScript.snowmanPosition2.position);
+                AudioManager.instance.PlaySound("SnowmanMove");
 
                 coneServed = true;
             }

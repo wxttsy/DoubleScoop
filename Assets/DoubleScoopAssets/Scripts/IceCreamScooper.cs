@@ -25,6 +25,7 @@ public class IceCreamScooper : MonoBehaviour
     public void ScoopIceCream(GameObject iceCreamScoop )
     {
         Debug.Log("Scooping");
+        AudioManager.instance.PlaySound("Scooping");
         scoopOfIcecream = Instantiate(iceCreamScoop, new Vector3(ScoopLocation.position.x, ScoopLocation.position.y, ScoopLocation.position.z), Quaternion.identity, ScoopLocation.GetComponentInParent<IceCreamScooper>().gameObject.transform);
         scoopOfIcecream.GetComponent<IceCreamScoop>().scooper = this;
         hasScoop = true;
@@ -44,6 +45,7 @@ public class IceCreamScooper : MonoBehaviour
     {
         if(scoopOfIcecream != null)
         {
+            AudioManager.instance.PlaySound("Poof");
             hasScoop = false;
             scoopOfIcecream.transform.SetParent(null);
             Destroy(scoopOfIcecream);
